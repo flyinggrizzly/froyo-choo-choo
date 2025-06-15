@@ -3,6 +3,7 @@ inherit_gem: { rubocop-rails-omakase: rubocop.yml }
 
 plugins:
   - rubocop-minitest
+  - rubocop-sorbet
 
 # Overwrite or add rules to create your own house style
 #
@@ -19,6 +20,9 @@ Minitest/AssertPredicate:
 Rails/RefuteMethods:
   Enabled: true
   EnforcedStyle: refute
+
+Sorbet/ValidSigil:
+  Enabled: true
 
 Style/FrozenStringLiteralComment:
   Enabled: true
