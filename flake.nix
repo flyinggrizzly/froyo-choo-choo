@@ -104,8 +104,8 @@
               if ! pg_ctl status > /dev/null 2>&1; then
                 echo "Starting PostgreSQL server..."
                 # Using only unix sockets, and explicitly disabling TCP/IP allows this to run without conflicting
-                # with any other apps or worktrees for the sme app
-                pg_ctl start -l "$PGDATA/postgresql.log" -o "--unix_socket_directories='$PGDATA' -c listen_addresses='''"
+                # with any other apps or worktrees for the same app
+                pg_ctl start -l "$PGDATA/postgresql.log" -o "--unix_socket_directories='$PGDATA' -c listen_addresses='''" --no-wait --silent
               else
                 echo "PostgreSQL server is already running"
               fi

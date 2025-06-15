@@ -111,8 +111,10 @@ if command -v direnv >/dev/null 2>&1; then
     print_info "Setting up direnv..."
     direnv allow
 
-    # Reenter the directory to trigger direnv setup
-    cd && cd "$TARGET_DIR"
+    if command -v nix >/dev/null 2>&1; then
+        print_info "Building Nix environment (this may take a while on first run)..."
+        nix develop --command true
+    fi
 else
     print_warn "direnv not found - skipping automatic setup"
 fi
@@ -142,5 +144,5 @@ fi
 if [ $missing_tools -eq 1 ]; then
     echo "  # Then run: direnv allow"
 else
-    echo "  # Environment is ready - run: nix develop"
+    echo "  # Environment is ready - run: cd '$TARGET_DIR'"
 fi
