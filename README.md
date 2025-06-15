@@ -9,6 +9,14 @@ It comes with:
 - Sorbet
 - scripts for managing Ruby dependencies, since `bundle add <gem>` no longer works in Nix's readonly store
 
+## Setup
+
+```
+sh <(curl -fsSL https://raw.githubusercontent.com/flyinggrizzly/froyo-choo-choo/main/install.sh) [<path>]
+```
+
+Run 👆 command, and follow any intructions (sets up the template in `.` if no `<path>` is provided).
+
 ## Dependency tooling
 
 - `add-gem <gem>` adds a gem to your `Gemfile`, runs `bundle lock`, and then regenerates `gemset.nix`
