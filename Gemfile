@@ -70,4 +70,4 @@ group :test do
   gem "selenium-webdriver"
 end
 
-gem "sorbet-static-and-runtime", "~> 0.5.12176"
+gem "sorbet-static-and-runtime", "~> 0.5.12196"
